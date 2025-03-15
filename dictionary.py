@@ -14,16 +14,26 @@ class Dictionary:
             parole = []
             for linea in file:
                 parola = linea.split()
-                parole.append(parola)
+                parola_minuscola = parola
+                parole.append(parola_minuscola)
             for parola in parole:
-                self.dizionario[parola[0]] = parola[1]
+                chiave = parola[0].lower()
+                valore = parola[1].lower()
+                self.dizionario[chiave] = valore
             return self.dizionario
 
-    def addWord(self):
-        pass
+    def addWord(self, parola_aliena, parola_umana):
+        self.dizionario[parola_aliena] = parola_umana
+        return self.dizionario
 
     def translate(self, parola_aliena):
-        pass
+        return self.dizionario[parola_aliena]
 
     def translateWordWildCard(self):
         pass
+
+d = Dictionary()
+print(d.readDict())
+print(d.dizionario["kissa"])
+print(d.translate("kissa"))
+print(d.addWord("moi", "matrimonio"))
