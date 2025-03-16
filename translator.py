@@ -51,10 +51,9 @@ class Translator:
         # query is a string with a ? --> <par?la_aliena>
         pass
 
-t = Translator()
-print(t.printMenu())
-print(t.loadDictionary())
-print(t.handleTranslate("kadnajkbdabkan"))
-tupla = ("kim", "kardashian", "jenner")
-print(t.handleAdd(tupla))
-print(t.handleTranslate("kim"))
+    def contrInput(self, txt):
+        if txt.isalpha() == False:
+            txt = f"Il testo non è valido!"
+        else:
+            txt = txt.lower()
+        return txt
