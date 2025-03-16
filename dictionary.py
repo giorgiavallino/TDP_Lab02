@@ -31,9 +31,3 @@ class Dictionary:
 
     def translateWordWildCard(self):
         pass
-
-d = Dictionary()
-print(d.readDict())
-print(d.dizionario["kissa"])
-print(d.translate("kissa"))
-print(d.addWord("moi", "matrimonio"))
