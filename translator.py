@@ -27,9 +27,13 @@ class Translator:
     def handleAdd(self, entry): # entry is a tuple <parola_aliena> <traduzione1 traduzione2 ...>
         pass
 
-    def handleTranslate(self, query): # query is a string <parola_aliena>
-        traduzione = self.dizionario.translate("kissa")
-        return traduzione
+    def handleTranslate(self, query):# query is a string <parola_aliena>
+        if query in self.dizionario.dizionario.keys():
+            traduzione = self.dizionario.translate(query)
+            stringa = f"La traduzione della parola aliena {query} è: {traduzione}."
+        else:
+            stringa = f"La tarduzione della parola aliena {query} non è ancora disponibile."
+        return stringa
 
     def handleWildCard(self,query):
         # query is a string with a ? --> <par?la_aliena>
@@ -38,4 +42,4 @@ class Translator:
 t = Translator()
 print(t.printMenu())
 print(t.loadDictionary())
-print(t.handleTranslate("kissa"))
+print(t.handleTranslate("kadnajkbdabkan"))
