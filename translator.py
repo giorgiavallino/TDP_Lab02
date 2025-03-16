@@ -21,15 +21,15 @@ class Translator:
         return stringa
 
     def loadDictionary(self):
-        self.dizionario = self.dizionario.readDict()
+        self.dizionario.readDict()
         return self.dizionario
 
     def handleAdd(self, entry): # entry is a tuple <parola_aliena> <traduzione1 traduzione2 ...>
         pass
 
     def handleTranslate(self, query): # query is a string <parola_aliena>
-        pass
-
+        traduzione = self.dizionario.translate("kissa")
+        return traduzione
 
     def handleWildCard(self,query):
         # query is a string with a ? --> <par?la_aliena>
@@ -38,4 +38,4 @@ class Translator:
 t = Translator()
 print(t.printMenu())
 print(t.loadDictionary())
-print(t.handleTranslate())
+print(t.handleTranslate("kissa"))
