@@ -28,6 +28,3 @@ class Dictionary:
 
     def translate(self, parola_aliena):
         return self.dizionario[parola_aliena]
-
-    def translateWordWildCard(self):
-        pass
